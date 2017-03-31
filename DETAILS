@@ -1,0 +1,8 @@
+MOD_NAME=mod-advnet
+MOD_VERSION=0.0.1
+MOD_LONG_NAME="[3.1] ${MOD_NAME} "
+MOD_INFO="More granular ICMP blocking."
+MOD_DIR=/var/smoothwall/mods/mod-advnet
+MOD_AUTHOR=dataking
+MOD_MAINTAINER=dataking
+MOD_FORUM=
