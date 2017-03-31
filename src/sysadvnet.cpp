@@ -78,16 +78,16 @@ int set_advnet(std::vector<std::string> & parameters, std::string & response)
 	else 
 	{
 		if (settings["ENABLE_NOPING_RED"] == "on")
-			ipb.push_back("iptables -A advnet -i " + ethsettings["RED_DEV"] + " -p icmp -j DROP");
+			ipb.push_back("iptables -A advnet -i " + ethsettings["RED_DEV"] + " -p icmp --icmp-type echo-request -j DROP");
 	
 		if (settings["ENABLE_NOPING_GREEN"] == "on")
-			ipb.push_back("iptables -A advnet -i " + ethsettings["GREEN_DEV"] + " -p icmp -j DROP");
+			ipb.push_back("iptables -A advnet -i " + ethsettings["GREEN_DEV"] + " -p icmp --icmp-type echo-request -j DROP");
 	
 		if ((ethsettings["PURPLE_DEV"] != "") && (settings["ENABLE_NOPING_PURPLE"] == "on"))
-			ipb.push_back("iptables -A advnet -i " + ethsettings["PURPLE_DEV"] + " -p icmp -j DROP");
+			ipb.push_back("iptables -A advnet -i " + ethsettings["PURPLE_DEV"] + " -p icmp --icmp-type echo-request -j DROP");
 	
 		if ((ethsettings["ORANGE_DEV"] != "") && (settings["ENABLE_NOPING_ORANGE"] == "on"))
-			ipb.push_back("iptables -A advnet -i " + ethsettings["ORANGE_DEV"] + " -p icmp -j DROP");
+			ipb.push_back("iptables -A advnet -i " + ethsettings["ORANGE_DEV"] + " -p icmp --icmp-type echo-request -j DROP");
 	}
 
 	if (settings["ENABLE_COOKIES"] == "on")
